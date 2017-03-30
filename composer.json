@@ -1,0 +1,21 @@
+{
+    "name": "wcs/odl",
+    "description": "hackathon #1",
+    "type": "project",
+    "authors": [
+        {
+            "name": "DamienPERRIN",
+            "email": "daperr87@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^2.3"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "wcs\\": "src/"
+        }
+    }
+
+}
