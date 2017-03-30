@@ -1,27 +1,23 @@
 <?php
 
-$var = $_POST['name'];
+$var = $_POST['keyword'];
 
-$url= 'http://www.omdbapi.com/?s='.$var;
-
+$url = 'http://www.omdbapi.com/?s=' . $var;
 
 $curl = curl_init();
-
-
-curl_setopt($curl, CURLOPT_URL, $url);
 
 curl_setopt($curl, CURLOPT_COOKIESESSION, true);
 
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
+curl_setopt($curl, CURLOPT_URL, $url);
 
 $return = curl_exec($curl);
 
 curl_close($curl);
 
-$url = file_get_contents($url);
+$result = json_decode($return, true);
 
-$result = json_decode($return,true);
 
 ?>
 <!doctype html>
@@ -39,21 +35,49 @@ $result = json_decode($return,true);
     <link rel="stylesheet" href="list.css">
 </head>
 <body>
+<!-- form ---------------------------------->
+<div class="row">
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <form action="" method="post" role="form">
+            <input type="hidden" name="id">
+            <legend>Your search</legend>
+            <div class="form-group">
+                <label for="">Keyword</label>
+                <input type="text" class="form-control" name="keyword" id="keyword" placeholder="Enter your search">
+            </div>
+            <div class="form-group">
+                <label for="type">Type</label>
+                <select class="form-control" id="type" name="type">
+                    <option value="default" selected>Choose a type</option>
+                    <option value="movie">Movie</option>
+                    <option value="series">Series</option>
+                    <option value="episode">Episode</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="year">Year</label>
+                <select name="year">
+                    <option value="default" selected>Choose a year</option>
+                    <?php
+                    for ($menuyear = 1900; $menuyear < 2018; $menuyear++) {
+                        ?>
+                        <option value="year">
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<form method="post">
-    <div class="form-group">
-        <label for="">Movie search by title</label>
-        <input type="text" class="form-control" id="name" name="name">
-    </div>
-    <div class="form-group">
-        <label for="year">Movie search by year:</label>
-        <input type="number" class="form-control" id="year">
-    </div>
-    <button type="submit" class="btn btn-default">Search</button>
-</form>
+                            <?php echo $menuyear; ?>
+                        </option>
+                        <?php
+                    }
+                    ?>
 
+                </select>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+</div>
+<!-- search results ---------->
 <div class="row">
     <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -67,13 +91,13 @@ $result = json_decode($return,true);
                     <th>Type</th>
                     <th>Poster</th>
                 </tr>
-                <?php foreach($result[Search] as $record=>$item): ?>
+                <?php foreach ($result['Search'] as $item): ?>
                     <tr>
-                        <td><?php echo $item['imdbID'];?></td>
-                        <td><?php echo $item['Title'];?></td>
-                        <td><?php echo $item['Year'];?></td>
-                        <td><?php echo $item['Type'];?></td>
-                        <td><img src="<?php echo $item['Poster'];?>"> </td>
+                    <td><?php echo $item['imdbID']; ?></td>
+                        <td><?php echo $item['Title']; ?></td>
+                        <td><?php echo $item['Year']; ?></td>
+                        <td><?php echo $item['Type']; ?></td>
+                    <td><img src="<?php echo $item['Poster'];?>"></td>
                     </tr>
                 <?php endforeach; ?>
             </table>

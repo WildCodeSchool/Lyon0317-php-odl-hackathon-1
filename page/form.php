@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -19,16 +21,17 @@
     <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
         <form action="" method="post" role="form">
-            <input type="hidden" name="id" value="<? echo $id; ?>">
-            <legend>Formulaire de contact</legend>
+            <input type="hidden" name="id">
+            <legend>Your search</legend>
 
             <div class="form-group">
-                <label for="">Firstname</label>
+                <label for="">Keyword</label>
                 <input type="text" class="form-control" name="keyword" id="keyword" placeholder="Enter your search">
             </div>
             <div class="form-group">
-                <label for="type">Faction</label>
+                <label for="type">Type</label>
                 <select class="form-control" id="type" name="type">
+                    <option value="default" selected>Choose a type</option>
                     <option value="movie">Movie</option>
                     <option value="series">Series</option>
                     <option value="episode">Episode</option>
@@ -36,15 +39,30 @@
             </div>
             <div class="form-group">
                 <label for="year">Year</label>
-                <input type="text" class="form-control" name="year" id="email" placeholder="Entrez votre email">
+                <select name="year">
+                    <option value="default" selected>Choose a year</option>
+                        <?php
+                        for ($menuyear = 1900; $menuyear < 2018; $menuyear++)
+                        {
+                            ?>
+                            <option value="year">
+
+                        <?php echo $menuyear; ?>
+                    </option>
+                    <?php
+                        }
+                        ?>
+
+                </select>
                 <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
         </form>
     </div>
     <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
 </div>
 
 <section>
-     include(page ~ '.html.twig') }}
+
 </section>
 <script
         src="https://code.jquery.com/jquery-3.1.1.js"
