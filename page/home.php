@@ -1,3 +1,10 @@
+<?php
+    require "../src/bddManager.php";
+    require "../src/userManager.php";
+
+
+?>
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -19,7 +26,7 @@
     <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
         <form action="" method="post" role="form">
-            <input type="hidden" name="id" value="<? echo $id; ?>">
+            <input type="hidden" name="id" value="">
             <legend>Chercher un film</legend>
 
             <div class="form-group">
