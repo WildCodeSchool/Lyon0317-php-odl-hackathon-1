@@ -1,7 +1,15 @@
+
 <?php
-/**
- * Created by PhpStorm.
- * User: wilder
- * Date: 30/03/17
- * Time: 11:03
- */
+// create a new cURL resource
+$ch = curl_init();
+
+// set URL and other appropriate options
+curl_setopt($ch, CURLOPT_URL, "http://www.example.com/");
+curl_setopt($ch, CURLOPT_HEADER, 0);
+
+// grab URL and pass it to the browser
+curl_exec($ch);
+
+// close cURL resource, and free up system resources
+curl_close($ch);
+?>
