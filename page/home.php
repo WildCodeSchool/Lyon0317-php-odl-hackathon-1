@@ -20,14 +20,14 @@
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
         <form action="" method="post" role="form">
             <input type="hidden" name="id" value="<? echo $id; ?>">
-            <legend>Formulaire de contact</legend>
+            <legend>Chercher un film</legend>
 
             <div class="form-group">
-                <label for="">Firstname</label>
+                <label for="">Title</label>
                 <input type="text" class="form-control" name="keyword" id="keyword" placeholder="Enter your search">
             </div>
             <div class="form-group">
-                <label for="type">Faction</label>
+                <label for="type"></label>
                 <select class="form-control" id="type" name="type">
                     <option value="movie">Movie</option>
                     <option value="series">Series</option>
@@ -43,9 +43,6 @@
     <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
 </div>
 
-<section>
-     include(page ~ '.html.twig') }}
-</section>
 <script
         src="https://code.jquery.com/jquery-3.1.1.js"
         integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="

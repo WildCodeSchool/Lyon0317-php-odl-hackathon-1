@@ -4,11 +4,14 @@
     "type": "project",
     "authors": [
         {
-            "name": "LaurentNougaret",
-            "email": "uriel3@hotmail.fr"
+            "name": "DamienPerrin",
+            "email": "daperr87@gmail.com"
         }
     ],
     "require": {
         "twig/twig": "^2.3"
+    }
+    "autoload": {
+        "psr-4": {"wcs\\": "src/"}
     }
 }
