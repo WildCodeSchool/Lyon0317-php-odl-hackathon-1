@@ -1,4 +1,6 @@
-
+<?php
+$type = $_POST['type'];
+?>
 <div class="row">
     <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -7,12 +9,12 @@
             <legend>Your search</legend>
             <div class="form-group">
                 <label for="keyword">Keyword</label>
-                <input type="text" class="form-control" name="keyword" id="keyword" placeholder="Enter your search">
+                <input type="text" class="form-control" name="keyword" id="keyword" required="required" placeholder="Enter your search">
             </div>
             <div class="form-group">
                 <label for="type">Type</label>
                 <select class="form-control" id="type" name="type">
-                    <option value="default" selected>Choose a type</option>
+                    <option value="<?php echo $type; ?>" selected>Choose a type</option>
                     <option value="<?php echo $type; ?>">Movie</option>
                     <option value="<?php echo $type; ?>">Series</option>
                     <option value="<?php echo $type; ?>">Episode</option>
