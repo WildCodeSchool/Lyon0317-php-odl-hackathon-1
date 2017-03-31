@@ -1,14 +1,15 @@
 <?php
 namespace wcs;
 
-class request
+class AddKeywordManager
 {
-    const TABLE = "";
+    const TABLE = "keyword";
 
     private $bdd;
 
     private $id;
     private $keyWord;
+    private $url;
 
     public function __construct($bdd)
     {
@@ -17,8 +18,9 @@ class request
 
     public function addKeyWord()
     {
-        $sql = "INSERT INTO" . self::TABLE . "(keyword)
-                VALUES ('$this->keyWord');";
+        $sql = "INSERT INTO" . self::TABLE . "(keyword, url)
+                VALUES ('$this->keyWord', '$this->url);";
+        $this->bdd->execSql($sql);
     }
 
     /**
@@ -47,14 +49,28 @@ class request
         $this->id = $id;
     }
 
-
-
     /**
      * @param mixed $keyWord
      */
     public function setKeyWord($keyWord)
     {
         $this->keyWord = $keyWord;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * @param mixed $url
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
     }
 
 

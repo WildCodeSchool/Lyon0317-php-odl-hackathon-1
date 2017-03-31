@@ -2,13 +2,13 @@
 
 namespace wcs;
 
-class bddManager
+class BddManager
 {
     private $connection;
 
     public function __construct()
     {
-        $mysqli = new \mysqli(USER, PASSWORD, HOST, DBNAME);
+        $mysqli = new \mysqli(Config::HOST, Config::USER, Config::PASSWORD, Config::DBNAME);
         if ($mysqli->connect_errno) {
             throw new \mysqli_sql_exception("Cannot connect to MySQL : (" . $mysqli->connect_errno . ") " . $mysqli->connect_error);
         }
