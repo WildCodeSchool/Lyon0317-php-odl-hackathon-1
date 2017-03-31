@@ -22,43 +22,20 @@ form {
 }
 /* ========= HEADER ========== */
 .top-bar {
-    background: #f7f7f7 none repeat scroll 0 0;
-    height: 80px;
-    width: 100%;
+    background: rgba(247, 247, 247, 0);
+    height: 80px;;
+    margin: 0 auto;
 }
 .top-bar p {
-    color: #000000;
-    font: 500 20px/38px roboto;
-}
-.socl-icons {
-    padding-top: 5px;
-}
-.top-bar .socl-icons ul {
-    float: right;
-}
-.top-bar .socl-icons li {
-    float: left;
-    list-style: outside none none;
-    margin-right: 8px;
-}
-.top-bar .socl-icons li a {
-    display: inline-block;
-    border-radius: 0;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    background: #000;
-    color: #fff;
-    margin: 0 0px;
+    color: rgba(235, 235, 235, 0.9);
+    font: 32px roboto;
     text-align: center;
-    font-size: 16px;
 }
-
 /* ========= FOOTER ========== */
 
 footer {
-    background-color: rgb(255, 240, 220);
     bottom: -200px;
     text-align: center;  font-size: 12px;
     padding: 10px;
+    color: white;
 }
