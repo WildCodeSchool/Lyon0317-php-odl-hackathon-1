@@ -57,10 +57,22 @@ $result = json_decode($return, true);
           crossorigin="anonymous">
 </head>
 <body>
+
+<header>
 <?php include "inc/header.php"?>
+</header>
+
+<div class="search">
 <?php include "inc/form.php"?>
+</div>
+
+<div class="list">
 <?php include "inc/list.php"?>
+</div>
+
+<footer>
 <?php include "inc/footer.php"?>
+</footer>
 
 <script src="http://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
