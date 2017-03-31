@@ -12,15 +12,23 @@
                     <th>Type</th>
                     <th>Poster</th>
                 </tr>
-                <?php foreach ($result['Search'] as $item): ?>
+                <?php
+
+                if ($valid == true) {
+                    foreach ($result['Search'] as $item): ?>
+                        <tr>
+                            <td><?php echo $item['imdbID']; ?></td>
+                            <td><?php echo $item['Title']; ?></td>
+                            <td><?php echo $item['Year']; ?></td>
+                            <td><?php echo $item['Type']; ?></td>
+                            <td><img src="<?php echo $item['Poster']; ?>"></td>
+                        </tr>
+                    <?php endforeach;
+                } else { ?>
                     <tr>
-                        <td><?php echo $item['imdbID']; ?></td>
-                        <td><?php echo $item['Title']; ?></td>
-                        <td><?php echo $item['Year']; ?></td>
-                        <td><?php echo $item['Type']; ?></td>
-                        <td><img src="<?php echo $item['Poster'];?>"></td>
+                        <td>Please make a new search</td>
                     </tr>
-                <?php endforeach; ?>
+                <?php } ?>
             </table>
         </div>
     </div>
