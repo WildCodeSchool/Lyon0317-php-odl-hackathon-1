@@ -11,15 +11,15 @@
                     <th>Type</th>
                     <th>Poster</th>
                 </tr>
-                <?php foreach ($result['Search'] as $item): ?>
-                    <tr>
-                        <td><?php echo $item['imdbID']; ?></td>
-                        <td><?php echo $item['title']; ?></td>
-                        <td><?php echo $item['year']; ?></td>
-                        <td><?php echo $item['type']; ?></td>
-                        <td><img src="<?php echo $item['poster'];?>"></td>
-                    </tr>
-                <?php endforeach; ?>
+                {% for item in result %}
+                <tr>
+                    <td>{{ item.imdbID }}</td>
+                    <td>{{ item.title }}</td>
+                    <td>{{ item.year }}</td>
+                    <td>{{ item.type }}</td>
+                    <td><img src="{{ item.poster }}"></td>
+                </tr>
+                {% endfor %}
             </table>
         </div>
     </div>

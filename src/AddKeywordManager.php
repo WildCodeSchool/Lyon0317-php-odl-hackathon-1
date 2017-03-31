@@ -10,6 +10,7 @@ class AddKeywordManager
     private $id;
     private $keyWord;
     private $url;
+    private $title;
 
     public function __construct($bdd)
     {
@@ -73,6 +74,20 @@ class AddKeywordManager
         $this->url = $url;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
 
+    /**
+     * @param mixed $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
 
 }

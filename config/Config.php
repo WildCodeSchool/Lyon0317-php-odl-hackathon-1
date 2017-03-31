@@ -4,7 +4,7 @@ namespace  wcs;
 class Config
 {
     const USER      = "root";
-    const PASSWORD  = "jecode4wcs";
+    const PASSWORD  = "toto";
     const HOST      = "localhost";
-    const DBNAME    = "user";
+    const DBNAME    = "omdbhack";
 }

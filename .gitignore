@@ -1,1 +1,4 @@
 /vendor/
+/tmp/*
+config/Config.php
+!/tmp/.gitkeep
