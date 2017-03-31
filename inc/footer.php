@@ -1,0 +1,1 @@
+<p>© 2017 Made by ODL with love (and drowsiness) <br>Wild Code School - Lyon</p>
